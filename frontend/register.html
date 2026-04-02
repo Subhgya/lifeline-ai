@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - LifeLine AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card">
+    <h2>Register</h2>
+
+    <input type="text" id="username" placeholder="Username"><br><br>
+    <input type="password" id="password" placeholder="Password"><br><br>
+
+    <input type="text" id="blood_group" placeholder="Blood Group"><br><br>
+    <input type="text" id="emergency_contact" placeholder="Emergency Contact"><br><br>
+
+    <button onclick="register()">Register</button>
+</div>
+
+<script>
+function register() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const blood_group = document.getElementById("blood_group").value;
+    const emergency_contact = document.getElementById("emergency_contact").value;
+
+    fetch('http://127.0.0.1:5000/register', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            username: username,
+            password: password,
+            blood_group: blood_group,
+            emergency_contact: emergency_contact
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+        if(data.status === "success") {
+            window.location.href = "login.html";
+        }
+    })
+    .catch(error => {
+        alert("Error connecting to server");
+        console.error(error);
+    });
+}
+</script>
+    .then(data => {
+        alert(data.message);
+        window.location.href = "login.html";
+    });
+}
+</script>
+
+</body>
+</html>

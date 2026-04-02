@@ -1,0 +1,20 @@
+[
+    {
+        "username": "test",
+        "password": "123",
+        "blood_group": "O+",
+        "emergency_contact": "9876543210"
+    },
+    {
+        "username": "admin",
+        "password": "admin",
+        "blood_group": "A+",
+        "emergency_contact": "9123456789"
+    },
+    {
+        "username": "user1",
+        "password": "pass1",
+        "blood_group": "B+",
+        "emergency_contact": "9012345678"
+    }
+]

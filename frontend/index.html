@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LifeLine AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>LifeLine AI</h2>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Emergency SOS</h2>
+        <button class="sos" onclick="sendSOS()">SEND SOS</button>
+        <button onclick="findHospitals()">Nearby Hospitals</button>
+    </div>
+
+    <div class="card">
+        <h2>AI Health Assistant</h2>
+        <div id="chatbox" class="chatbox"></div>
+        <input type="text" id="userInput" placeholder="Describe your health issue">
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="startVoice()">🎤 Speak</button>
+    </div>
+
+   <div class="card">
+    <h2>User Information</h2>
+    <p>Blood Group: <span id="blood"></span></p>
+    <p>Emergency Contact: <span id="contact"></span></p>
+   </div>
+
+    <div class="card">
+        <h2>First Aid Guide</h2>
+        <ul>
+            <li>Burn → Run cool water for 10 mins</li>
+            <li>Cut → Clean, antiseptic, bandage</li>
+            <li>Fever → Rest, fluids, paracetamol</li>
+            <li>Fracture → Immobilize and go to hospital</li>
+            <li>Choking → Perform Heimlich maneuver</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Health Tips</h2>
+        <p>Drink 2–3L water daily</p>
+        <p>Sleep 7–8 hours</p>
+        <p>Exercise regularly</p>
+    </div>
+
+</div>
+<script src="script.js"></script>
+<script>
+let username = localStorage.getItem("username");
+if(username){
+    loadUser(username);
+}
+</script>
+</body>
+</html>
+
